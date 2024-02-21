@@ -1,0 +1,16 @@
+
+
+spring:
+  profile: cloud
+  application:
+    name: spring-vault
+  config:
+    import: vault://
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      kv:
+        enabled: true
+      token: root

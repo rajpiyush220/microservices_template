@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  vault:
+    image: hashicorp/vault
+    container_name: hashicorp-vault
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "root" # Change it with strong token for prod
+    volumes:
+      - ./vault/data:/vault/data
+    cap_add:
+      - IPC_LOCK # Required for Vault, it prevents secret swapping out from main memory
