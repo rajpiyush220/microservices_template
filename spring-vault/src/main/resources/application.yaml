@@ -13,4 +13,4 @@ spring:
       scheme: http
       kv:
         enabled: true
-      token: root
+      token: change-it
