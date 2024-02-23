@@ -1,0 +1,24 @@
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+    - vault
+    - git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/rajpiyush220/config-server-vault.git
+          clone-on-start: true
+          skipSslValidation: true
+          default-label: master
+          order: 2
+        vault:
+          host: 20.235.247.250
+          port: 8200
+          kv-version: 2
+          order: 1
+server:
+  port: 8888
